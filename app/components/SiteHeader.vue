@@ -17,11 +17,11 @@
 
       <div class="flex items-center gap-4">
 
-        <a href="https://bsky.app" target="_blank" aria-label="Bluesky" class="flex items-center text-gray-400 hover:text-black transition-colors">
+        <a href="https://bsky.app/profile/pauliecodes.bsky.social" target="_blank" aria-label="Bluesky" class="flex items-center text-gray-400 hover:text-black transition-colors">
           <Icon name="simple-icons:bluesky" size="1rem" />
         </a>
 
-        <a href="https://github.com" target="_blank" aria-label="GitHub" class="flex items-center text-gray-400 hover:text-black transition-colors">
+        <a href="https://github.com/pauliecodes" target="_blank" aria-label="GitHub" class="flex items-center text-gray-400 hover:text-black transition-colors">
           <Icon name="simple-icons:github" size="1rem" />
         </a>
 
