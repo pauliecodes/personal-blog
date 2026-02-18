@@ -3,12 +3,15 @@ export default defineNuxtConfig({
 
     modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@nuxt/icon'],
 
+    nitro: {
+        preset: 'vercel'
+    },
+
     app: {
         head: {
             link: [
                 {
                     rel: 'stylesheet',
-                    // ✅ FIX: Load Inter (UI), Lora (Reading), and Fira Code (Code) in ONE request
                     href: 'https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap'
                 }
             ]
