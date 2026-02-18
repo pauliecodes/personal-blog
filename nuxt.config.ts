@@ -3,8 +3,11 @@ export default defineNuxtConfig({
 
     modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@nuxt/icon'],
 
-    nitro: {
-        preset: 'vercel'
+    content: {
+        database: {
+            type: 'sqlite',
+            filename: ':memory:'
+        }
     },
 
     app: {
