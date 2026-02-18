@@ -4,7 +4,7 @@ description: "My personal digital garden."
 navigation: false
 ---
 
-<div class="mb-16">
+<div class="mb-4">
   <h1 class="text-5xl sm:text-6xl font-serif font-medium text-gray-900 mb-6">
     Hi, I'm Paula.
   </h1>
