@@ -1,6 +1,7 @@
 <script setup>
+const route = useRoute()
 const { data: page } = await useAsyncData('home', () =>
-    queryCollection('content').path('/').first()
+    queryCollection('content').path(route.path).first()
 )
 </script>
 
