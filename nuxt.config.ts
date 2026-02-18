@@ -3,11 +3,10 @@ export default defineNuxtConfig({
 
     modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@nuxt/icon'],
 
-    content: {
-        database: {
-            type: 'sqlite',
-            filename: ':memory:'
-        }
+    routeRules: {
+        '/': { prerender: true },
+        '/blog': { prerender: true },
+        '/blog/**': { prerender: true }
     },
 
     app: {
