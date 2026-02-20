@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     app: {
         head: {
             link: [
+                { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
                 {
                     rel: 'stylesheet',
                     href: 'https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap'
