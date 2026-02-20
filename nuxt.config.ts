@@ -1,12 +1,10 @@
 export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
 
-    modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@nuxt/icon'],
+    modules: ['@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxtjs/mdc'],
 
-    routeRules: {
-        '/': { prerender: true },
-        '/blog': { prerender: true },
-        '/blog/**': { prerender: true }
+    runtimeConfig: {
+        atprotoRepo: 'pauliecodes.bsky.social',
     },
 
     app: {

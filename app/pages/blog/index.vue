@@ -1,47 +1,35 @@
 <script setup>
-const { data: posts } = await useAsyncData('posts', () =>
-    queryCollection('content')
-        .where('path', '<>', '/')
-        .order('date', 'DESC')
-        .all()
-)
 
-const formatDate = (date) => {
-  return new Date(date).toLocaleDateString('en-GB', {
-    day: 'numeric', month: 'short', year: 'numeric'
-  })
-}
+const { data: posts, error } = await useFetch('/api/posts')
+
+useSeoMeta({
+  title: 'Blog | Paula',
+  description: 'Thoughts, learnings, and things I\'m building.',
+  ogTitle: 'Blog | Paula',
+  ogDescription: 'Thoughts, learnings, and things I\'m building.',
+})
 </script>
 
 <template>
-  <main class="max-w-2xl mx-auto px-6">
-    <section>
-      <h1 class="font-serif text-3xl mb-4 italic text-gray-900 font-light">Entries</h1>
-      <hr class="border-0 border-t border-gray-300 mb-12">
+  <main class="max-w-2xl mx-auto px-6 pb-24">
+    <div class="mb-12">
+      <h1 class="text-4xl sm:text-5xl font-serif font-medium text-gray-900 mb-4">Blog</h1>
+      <p class="text-lg font-serif text-gray-500 italic">Thoughts, learnings, and things I'm building.</p>
+    </div>
 
-      <div class="flex flex-col gap-12">
-        <article v-for="post in posts" :key="post.path" class="group">
-          <NuxtLink :to="post.path" class="block">
-            <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6">
+    <div v-if="error" class="py-12 text-center">
+      <p class="font-serif text-gray-500">Could not load posts. Please try again later.</p>
+    </div>
 
-              <time class="font-serif italic text-gray-400 text-sm w-24 shrink-0 transition-colors group-hover:text-gray-900">
-                {{ formatDate(post.date) }}
-              </time>
-
-              <div class="relative">
-                <h3 class="text-xl font-serif font-medium text-gray-900 decoration-gray-300 decoration-1 underline-offset-[6px] group-hover:underline group-hover:decoration-black transition-all">
-                  {{ post.title }}
-                </h3>
-
-                <p v-if="post.description" class="text-gray-500 text-sm mt-2 leading-relaxed max-w-lg">
-                  {{ post.description }}
-                </p>
-              </div>
-
-            </div>
-          </NuxtLink>
-        </article>
-      </div>
-    </section>
+    <ul v-else class="flex flex-col">
+      <li v-for="post in posts" :key="post.rkey" class="group border-t border-gray-200 last:border-b">
+        <NuxtLink :to="`/blog/${post.rkey}`" class="block py-6 hover:bg-gray-50 transition-colors">
+          <time class="text-sm text-gray-400 font-serif">{{ formatDate(post.createdAt) }} · {{ post.readingTime }}</time>
+          <h3 class="text-xl font-serif font-semibold text-gray-900 mt-1 group-hover:underline decoration-2 underline-offset-4">
+            {{ post.title }}
+          </h3>
+        </NuxtLink>
+      </li>
+    </ul>
   </main>
 </template>
