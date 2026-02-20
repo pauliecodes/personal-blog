@@ -1,6 +1,6 @@
 # Personal Website & Blog
 
-[paulacodes](https://paulas-personal-site.vercel.app/)' little corner on the internet.
+[pauliecodes](https://paulas-personal-site.vercel.app/)' little corner on the internet.
 
 Built with [Nuxt](https://nuxt.com/). Blog posts are fetched from the [AT Protocol](https://atproto.com/) and written using the [WhiteWind](https://whtwnd.com/) lexicons.
 
