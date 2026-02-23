@@ -31,4 +31,6 @@ pnpm preview
 
 ## License
 
-[MIT](./LICENSE.md)
+The code in this repository is open source and available under the [MIT License](./LICENSE.md).
+
+**Please note:** The MIT license does **not** apply to personal assets. Photographs, logos, and personal biography text are Copyright (c) 2026 pauliecodes and may not be reused without permission. If you fork this project for your own website, please remove these personal assets.
