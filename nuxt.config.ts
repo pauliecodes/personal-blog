@@ -4,7 +4,12 @@ export default defineNuxtConfig({
     modules: ['@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxtjs/mdc'],
 
     runtimeConfig: {
-        atprotoRepo: 'pauliecodes.bsky.social',
+        atprotoRepo: '',
+
+        public: {
+            socialGithub: '',
+            socialBluesky: ''
+        }
     },
 
     app: {
