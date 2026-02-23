@@ -1,7 +1,12 @@
 <script setup>
-
 const route = useRoute()
+const event = useRequestEvent()
+
 const { data: post, error } = await useFetch(`/api/post/${route.params.rkey}`)
+
+if (error.value && import.meta.server && event) {
+  setResponseStatus(event, 404)
+}
 
 useSeoMeta({
   title: () => post.value?.title ? `${post.value.title} | Paula` : 'Blog | Paula',
@@ -11,7 +16,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <main class="max-w-2xl mx-auto px-6 pb-24">
+  <div class="max-w-2xl mx-auto px-6 pb-24">
     <article>
       <NuxtLink to="/blog" class="text-sm font-serif text-gray-400 hover:text-gray-700 transition-colors mb-8 block">
         ← Back to blog
@@ -38,5 +43,5 @@ useSeoMeta({
         <NuxtLink to="/blog" class="font-serif text-gray-400 hover:text-gray-700 underline transition-colors">Back to blog</NuxtLink>
       </div>
     </article>
-  </main>
+  </div>
 </template>

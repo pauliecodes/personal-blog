@@ -9,7 +9,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <main class="max-w-2xl mx-auto px-6 pb-24">
+  <div class="max-w-2xl mx-auto px-6 pb-24">
 
     <div class="mb-4">
       <h1 class="text-5xl sm:text-6xl font-serif font-medium text-gray-900 mb-6">
@@ -23,28 +23,30 @@ useSeoMeta({
 
     <div class="font-serif my-8 text-lg text-gray-700 leading-loose">
       <div class="grid grid-cols-[3rem_1fr] items-baseline mb-4">
-        <span class="text-xs font-semibold text-gray-300">01</span>
+        <span class="text-xs font-semibold text-gray-400">01</span>
         <span>Working at <span class="font-semibold">CODIN IT</span></span>
       </div>
       <div class="grid grid-cols-[3rem_1fr] items-baseline mb-4">
-        <span class="text-xs font-semibold text-gray-300">02</span>
-        <span>Contributing to <a href="https://npmx.dev" target="_blank"
+        <span class="text-xs font-semibold text-gray-400">02</span>
+        <span>Contributing to <a href="https://npmx.dev" target="_blank" rel="noopener noreferrer"
                                  class="font-semibold hover:underline underline-offset-4 decoration-2">npmx.dev</a></span>
       </div>
       <div class="grid grid-cols-[3rem_1fr] items-baseline mb-4">
-        <span class="text-xs font-semibold text-gray-300">03</span>
+        <span class="text-xs font-semibold text-gray-400">03</span>
         <span>Based in <span>Flensburg, Germany</span></span>
       </div>
     </div>
 
-    <div class="prose prose-lg prose-p:font-serif prose-p:text-gray-700 prose-a:font-semibold prose-a:no-underline prose-a:underline-offset-4 prose-a:decoration-2 hover:prose-a:underline">
+    <div
+        class="prose prose-lg prose-p:font-serif prose-p:text-gray-700 prose-a:font-semibold prose-a:no-underline prose-a:underline-offset-4 prose-a:decoration-2 hover:prose-a:underline">
       <p>
         I've always loved building and creating. Programming has been my way to put all my ideas into something tangible
         since I was a teenager and got my first laptop.
       </p>
       <p>
         Recently, I made the decision to put my imposter syndrome aside and start contributing to Open Source.
-        I started with <a href="https://npmx.dev" target="_blank">npmx.dev</a>, an amazing project that really inspired
+        I started with <a href="https://npmx.dev" target="_blank" rel="noopener noreferrer">npmx.dev</a>, an amazing
+        project that really inspired
         and motivated me, with a community that immediately welcomed me.
       </p>
       <p>
@@ -57,5 +59,5 @@ useSeoMeta({
       </p>
     </div>
 
-  </main>
+  </div>
 </template>
