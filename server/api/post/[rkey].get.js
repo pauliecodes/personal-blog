@@ -10,7 +10,7 @@ export default defineCachedEventHandler(async (event) => {
 
     try {
         response = await $fetch(
-            `https://bsky.social/xrpc/com.atproto.repo.getRecord`, {
+            `https://npmx.social/xrpc/com.atproto.repo.getRecord`, {
                 query: {
                     repo: atprotoRepo,
                     collection: 'com.whtwnd.blog.entry',
