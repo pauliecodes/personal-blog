@@ -8,6 +8,13 @@ if (error.value && import.meta.server && event) {
   setResponseStatus(event, 404)
 }
 
+defineOgImage('Default.takumi', {
+  title: post.value?.title || 'My Awesome Blog',
+  date: formatDate(post.value?.createdAt),
+  readingTime: post.value?.readingTime,
+  theme: '#3b82f6',
+})
+
 useSeoMeta({
   title: () => post.value?.title ? `${post.value.title} | Paula` : 'Blog | Paula',
   ogTitle: () => post.value?.title,
