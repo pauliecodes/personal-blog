@@ -7,7 +7,7 @@ useSeoMeta({ title: computed(() => t('resume.seoTitle')) })
 
 const cvData = {
   de: {
-    name: 'Paula',
+    name: 'Paula Alemany Gotor',
     title: 'Software-Entwicklerin',
     contact: {
       email: 'pau9ale@gmail.com',
@@ -16,6 +16,8 @@ const cvData = {
       githubHref: 'https://github.com/pauliecodes',
       portfolio: 'paulie.codes',
       portfolioHref: 'https://paulie.codes/',
+      phone: '0172 6123509',
+      location: 'Flensburg, Deutschland',
     },
     profile:
       'Frontend-Entwicklerin mit Schwerpunkt auf Vue 3, TypeScript und skalierbarer Frontend-Architektur. Ich verantworte das Frontend eines Greenfield-Projekts eigenständig, von der Architektur und Standards über Tooling bis zur CI/CD-Pipeline. Als Accessibility Officer treibe ich unternehmensweite Barrierefreiheits-Standards voran.',
@@ -87,11 +89,11 @@ const cvData = {
     certificates: [
       'Accessibility-Kurs, Sara Soueidan (laufend)',
       'Barrierefreiheits-Workshop, Gehirngerecht',
-      'Certificate in Advanced English (B2), Cambridge University — 2018',
+      'Certificate in Advanced English, Cambridge University — 2018',
     ],
   },
   en: {
-    name: 'Paula',
+    name: 'Paula Alemany Gotor',
     title: 'Software Developer',
     contact: {
       email: 'pau9ale@gmail.com',
@@ -100,6 +102,8 @@ const cvData = {
       githubHref: 'https://github.com/pauliecodes',
       portfolio: 'paulie.codes',
       portfolioHref: 'https://paulie.codes/',
+      phone: '0172 6123509',
+      location: 'Flensburg, Germany',
     },
     profile:
       'Frontend developer focused on Vue 3, TypeScript, and scalable frontend architecture. I independently own the frontend of a greenfield project, from architecture and standards to tooling and CI/CD pipeline. As Accessibility Officer, I drive company-wide accessibility standards.',
@@ -171,7 +175,7 @@ const cvData = {
     certificates: [
       'Accessibility Course, Sara Soueidan (ongoing)',
       'Accessibility Workshop, Gehirngerecht',
-      'Certificate in Advanced English (B2), Cambridge University — 2018',
+      'Certificate in Advanced English, Cambridge University — 2018',
     ],
   },
 }
@@ -197,12 +201,14 @@ const cv = computed(() => cvData[locale.value])
       </div>
 
       <!-- Header -->
-      <header class="cv-section flex flex-row items-start justify-between gap-6 pb-6 mb-8 border-b border-gray-200">
+      <header class="cv-section flex flex-row items-start justify-between gap-6 pb-6 mb-8">
         <div>
           <h1 class="text-3xl font-serif font-medium text-gray-900 leading-none">{{ cv.name }}</h1>
           <p class="text-xs text-gray-500 mt-2 tracking-widest uppercase">{{ cv.title }}</p>
         </div>
         <div class="text-sm space-y-1 text-right">
+          <div class="text-gray-600">{{ cv.contact.location }}</div>
+          <div class="text-gray-600">{{ cv.contact.phone }}</div>
           <div><a :href="cv.contact.emailHref" class="text-gray-600" target="_blank" rel="noopener noreferrer">{{ cv.contact.email }}</a></div>
           <div><a :href="cv.contact.githubHref" class="text-gray-600" target="_blank" rel="noopener noreferrer">{{ cv.contact.github }}</a></div>
           <div><a :href="cv.contact.portfolioHref" class="text-gray-600" target="_blank" rel="noopener noreferrer">{{ cv.contact.portfolio }}</a></div>
