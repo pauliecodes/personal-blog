@@ -69,7 +69,7 @@ const cvData = {
       },
     ],
     skills: [
-      'Vue.js 3, Nuxt-Grundlagen, TypeScript, JavaScript',
+      'Vue.js 3, Nuxt, TypeScript, JavaScript',
       'Frontend-Architektur, Component Libraries, State Management',
       'HTML & CSS, Tailwind, UnoCSS, Bootstrap',
       'Testing (Vitest), CI/CD, Azure, Git, Docker',
@@ -153,7 +153,7 @@ const cvData = {
       },
     ],
     skills: [
-      'Vue.js 3, Nuxt basics, TypeScript, JavaScript',
+      'Vue.js 3, Nuxt, TypeScript, JavaScript',
       'Frontend architecture, component libraries, state management',
       'HTML & CSS, Tailwind, UnoCSS, Bootstrap',
       'Testing (Vitest), CI/CD, Azure, Git, Docker',
