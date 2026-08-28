@@ -10,7 +10,7 @@ const { locale, t, toggle } = useLocale()
         class="relative inline-block align-bottom max-w-0 overflow-hidden whitespace-nowrap transition-all duration-300 ease-out group-hover:max-w-[4rem]">aula</span>.
     </NuxtLink>
 
-    <nav class="flex items-center gap-6">
+    <nav class="flex items-center gap-3 sm:gap-6">
       <NuxtLink
           to="/blog"
           active-class="text-black font-semibold"
@@ -30,16 +30,16 @@ const { locale, t, toggle } = useLocale()
       <button
           @click="toggle"
           aria-label="Toggle language"
-          class="text-sm font-medium transition-colors"
+          class="text-sm font-medium transition-colors whitespace-nowrap"
       >
         <span :class="locale === 'en' ? 'text-gray-900' : 'text-gray-400 hover:text-gray-700'">EN</span>
         <span class="mx-0.5 text-gray-300">|</span>
         <span :class="locale === 'de' ? 'text-gray-900' : 'text-gray-400 hover:text-gray-700'">DE</span>
       </button>
 
-      <span class="h-4 w-px bg-gray-200" aria-hidden="true"></span>
+      <span class="hidden sm:block h-4 w-px bg-gray-200" aria-hidden="true"></span>
 
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3 sm:gap-4">
         <a :href="`https://bsky.app/profile/${config.public.socialBluesky}`" target="_blank" rel="noopener noreferrer"
            aria-label="Bluesky" class="flex items-center text-gray-400 hover:text-black transition-colors">
           <Icon name="simple-icons:bluesky" size="1rem"/>
