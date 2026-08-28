@@ -1,4 +1,5 @@
 <script setup>
+const { t } = useLocale()
 const {data: posts, error} = await useFetch('/api/posts')
 
 useSeoMeta({
@@ -13,15 +14,15 @@ useSeoMeta({
   <div class="max-w-2xl mx-auto px-6 pb-24">
     <div class="mb-12">
       <h1 class="text-4xl sm:text-5xl font-serif font-medium text-gray-900 mb-4">Blog</h1>
-      <p class="text-lg font-serif text-gray-500 italic">Thoughts, learnings, and things I'm building.</p>
+      <p class="text-lg font-serif text-gray-500 italic">{{ t('blog.subtitle') }}</p>
     </div>
 
     <div v-if="error" class="py-12 text-center">
-      <p class="font-serif text-gray-500">Could not load posts. Please try again later.</p>
+      <p class="font-serif text-gray-500">{{ t('blog.error') }}</p>
     </div>
 
     <div v-else-if="!posts || posts.length === 0" class="py-12 text-center">
-      <p class="font-serif text-gray-500">No posts yet. Check back soon!</p>
+      <p class="font-serif text-gray-500">{{ t('blog.empty') }}</p>
     </div>
 
     <ul v-else class="flex flex-col">

@@ -26,5 +26,9 @@ export default defineNuxtConfig({
         }
     },
 
+    routeRules: {
+        '/resume': { prerender: true }
+    },
+
     devtools: {enabled: true}
 })

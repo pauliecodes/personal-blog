@@ -1,7 +1,8 @@
 <script setup>
 const config = useRuntimeConfig()
-
+const { locale, t, toggle } = useLocale()
 </script>
+
 <template>
   <header class="w-full max-w-3xl mx-auto px-6 pt-6 pb-24 flex justify-between items-center">
     <NuxtLink to="/" class="group font-serif text-3xl font-medium tracking-tight hover:text-gray-600 transition-all">
@@ -17,6 +18,24 @@ const config = useRuntimeConfig()
       >
         Blog
       </NuxtLink>
+
+      <NuxtLink
+          to="/resume"
+          active-class="text-black font-semibold"
+          class="text-sm font-medium text-gray-500 hover:text-black transition-colors"
+      >
+        {{ t('nav.resume') }}
+      </NuxtLink>
+
+      <button
+          @click="toggle"
+          aria-label="Toggle language"
+          class="text-sm font-medium transition-colors"
+      >
+        <span :class="locale === 'en' ? 'text-gray-900' : 'text-gray-400 hover:text-gray-700'">EN</span>
+        <span class="mx-0.5 text-gray-300">|</span>
+        <span :class="locale === 'de' ? 'text-gray-900' : 'text-gray-400 hover:text-gray-700'">DE</span>
+      </button>
 
       <span class="h-4 w-px bg-gray-200" aria-hidden="true"></span>
 
