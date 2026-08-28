@@ -17,7 +17,7 @@ const cvData = {
       portfolio: 'paulie.codes',
       portfolioHref: 'https://paulie.codes/',
       phone: '0172 6123509',
-      location: 'Flensburg, Deutschland',
+      location: ['Flensburg, Deutschland', 'Umzugsbereit (Raum Hamburg)'],
     },
     profile:
       'Frontend-Entwicklerin mit Schwerpunkt auf Vue 3, TypeScript und skalierbarer Frontend-Architektur. Ich verantworte das Frontend eines Greenfield-Projekts eigenständig, von der Architektur und Standards über Tooling bis zur CI/CD-Pipeline. Als Accessibility Officer treibe ich unternehmensweite Barrierefreiheits-Standards voran.',
@@ -27,7 +27,7 @@ const cvData = {
         company: 'CODIN IT GmbH',
         period: 'Seit 01/2025',
         bullets: [
-          { text: 'Frontend-Entwicklung in mehreren Projekten, von der Modernisierung legacy gewachsener Anwendungen bis zum eigenverantwortlichen Aufbau neuer Systeme' },
+          { text: 'Frontend-Entwicklung in mehreren Projekten, von der Modernisierung historisch gewachsener Anwendungen bis zum eigenverantwortlichen Aufbau neuer Systeme' },
           { label: 'Greenfield-Projekt (Lead)', text: 'Technische Gesamtverantwortung für das Frontend (Vue 3, Vite, TypeScript): Architektur, Tooling und Standards eigenständig konzipiert und umgesetzt' },
           { text: 'Aufbau und Betrieb der CI/CD-Pipeline inklusive Deployment auf Azure' },
           { text: 'Definition und technische Durchsetzung projektweiter Standards, u. a. Feature-Isolation über eslint-plugin-boundaries, automatisierte Pre-Commit-Checks (ESLint, Prettier, Vitest) sowie einheitliche TypeScript- und Vue-Konventionen' },
@@ -103,7 +103,7 @@ const cvData = {
       portfolio: 'paulie.codes',
       portfolioHref: 'https://paulie.codes/',
       phone: '0172 6123509',
-      location: 'Flensburg, Germany',
+      location: ['Flensburg, Germany', 'Open to relocation (Hamburg area)'],
     },
     profile:
       'Frontend developer focused on Vue 3, TypeScript, and scalable frontend architecture. I independently own the frontend of a greenfield project, from architecture and standards to tooling and CI/CD pipeline. As Accessibility Officer, I drive company-wide accessibility standards.',
@@ -207,7 +207,7 @@ const cv = computed(() => cvData[locale.value])
           <p class="text-xs text-gray-500 mt-2 tracking-widest uppercase">{{ cv.title }}</p>
         </div>
         <div class="text-sm space-y-1 text-right">
-          <div class="text-gray-600">{{ cv.contact.location }}</div>
+          <div v-for="line in cv.contact.location" :key="line" class="text-gray-600">{{ line }}</div>
           <div class="text-gray-600">{{ cv.contact.phone }}</div>
           <div><a :href="cv.contact.emailHref" class="text-gray-600" target="_blank" rel="noopener noreferrer">{{ cv.contact.email }}</a></div>
           <div><a :href="cv.contact.githubHref" class="text-gray-600" target="_blank" rel="noopener noreferrer">{{ cv.contact.github }}</a></div>
