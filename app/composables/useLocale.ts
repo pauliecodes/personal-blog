@@ -1,17 +1,14 @@
 import { translations, type Locale, type TranslationKey } from '~/i18n/translations'
 
 export function useLocale() {
-  const locale = useState<Locale>('locale', () => 'en')
+  const locale = useCookie<Locale>('locale', { default: () => 'en', sameSite: 'lax' })
 
   function toggle() {
     locale.value = locale.value === 'en' ? 'de' : 'en'
-    if (import.meta.client) {
-      localStorage.setItem('locale', locale.value)
-    }
   }
 
   function t(key: TranslationKey): string {
-    return translations[locale.value][key] ?? translations.en[key] ?? key
+    return translations[locale.value ?? 'en'][key] ?? translations.en[key] ?? key
   }
 
   return { locale, t, toggle }
