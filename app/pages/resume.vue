@@ -201,12 +201,12 @@ const cv = computed(() => cvData[locale.value])
       </div>
 
       <!-- Header -->
-      <header class="cv-section flex flex-row items-start justify-between gap-6 pb-6 mb-8">
+      <header class="cv-section flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 pb-6 mb-8">
         <div>
           <h1 class="text-3xl font-serif font-medium text-gray-900 leading-none">{{ cv.name }}</h1>
           <p class="text-xs text-gray-500 mt-2 tracking-widest uppercase">{{ cv.title }}</p>
         </div>
-        <div class="text-sm space-y-1 text-right">
+        <div class="text-sm space-y-1 sm:text-right">
           <div v-for="line in cv.contact.location" :key="line" class="text-gray-600">{{ line }}</div>
           <div class="text-gray-600">{{ cv.contact.phone }}</div>
           <div><a :href="cv.contact.emailHref" class="text-gray-600" target="_blank" rel="noopener noreferrer">{{ cv.contact.email }}</a></div>
@@ -216,9 +216,9 @@ const cv = computed(() => cvData[locale.value])
       </header>
 
       <!-- Two-column body -->
-      <div class="cv-body grid grid-cols-[1fr_2fr] gap-6">
+      <div class="cv-body grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6">
         <!-- Sidebar -->
-        <aside class="cv-sidebar border-r border-gray-200 pr-6">
+        <aside class="cv-sidebar md:border-r border-gray-200 md:pr-6">
           <section class="cv-section mb-8">
             <h2 class="cv-section-heading">{{ t('resume.sections.languages') }}</h2>
             <ul class="space-y-3">
@@ -258,7 +258,7 @@ const cv = computed(() => cvData[locale.value])
           <section class="mb-8">
             <h2 class="cv-section-heading">{{ t('resume.sections.experience') }}</h2>
             <div v-for="job in cv.experience" :key="job.company" class="cv-job-entry mb-5 last:mb-0">
-              <div class="flex items-baseline justify-between gap-2">
+              <div class="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-0.5">
                 <span class="font-semibold text-sm text-gray-900">{{ job.role }}</span>
                 <span class="text-xs text-gray-400 shrink-0">{{ job.period }}</span>
               </div>
@@ -278,7 +278,7 @@ const cv = computed(() => cvData[locale.value])
           <section class="cv-section">
             <h2 class="cv-section-heading">{{ t('resume.sections.education') }}</h2>
             <div v-for="edu in cv.education" :key="edu.institution" class="cv-job-entry">
-              <div class="flex items-baseline justify-between gap-2">
+              <div class="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-0.5">
                 <span class="font-semibold text-sm text-gray-900">{{ edu.degree }}</span>
                 <span class="text-xs text-gray-400 shrink-0">{{ edu.period }}</span>
               </div>
@@ -314,6 +314,18 @@ const cv = computed(() => cvData[locale.value])
     margin: 0 auto 60px;
     padding: 40px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cv-root {
+    background-color: white;
+  }
+
+  .cv-container {
+    padding: 20px 16px;
+    margin-bottom: 40px;
+    box-shadow: none;
   }
 }
 
