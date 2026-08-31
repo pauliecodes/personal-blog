@@ -17,7 +17,7 @@ const cvData = {
       portfolio: 'paulie.codes',
       portfolioHref: 'https://paulie.codes/',
       phone: '0172 6123509',
-      location: ['Flensburg, Deutschland', 'Umzugsbereit (Raum Hamburg)'],
+      location: ['Flensburg, Deutschland'],
     },
     profile:
       'Frontend-Entwicklerin mit Schwerpunkt auf Vue 3, TypeScript und skalierbarer Frontend-Architektur. Ich verantworte das Frontend eines Greenfield-Projekts eigenständig, von der Architektur und Standards über Tooling bis zur CI/CD-Pipeline. Als Accessibility Officer treibe ich unternehmensweite Barrierefreiheits-Standards voran.',
@@ -72,11 +72,11 @@ const cvData = {
     ],
     skills: [
       'Vue.js 3, Nuxt, TypeScript, JavaScript',
+      'React, Next.js',
       'Frontend-Architektur, Component Libraries, State Management',
       'HTML & CSS, Tailwind, UnoCSS, Bootstrap',
       'Testing (Vitest), CI/CD, Azure, Git, Docker',
       'Barrierefreiheit (WCAG, semantisches HTML, ARIA, Accessibility Tree)',
-      'React, Next.js',
       'Java, Spring Boot, Kotlin, PHP, Laravel, Symfony',
       'SQL & PostgreSQL',
     ],
@@ -103,7 +103,7 @@ const cvData = {
       portfolio: 'paulie.codes',
       portfolioHref: 'https://paulie.codes/',
       phone: '0172 6123509',
-      location: ['Flensburg, Germany', 'Open to relocation (Hamburg area)'],
+      location: ['Flensburg, Germany'],
     },
     profile:
       'Frontend developer focused on Vue 3, TypeScript, and scalable frontend architecture. I independently own the frontend of a greenfield project, from architecture and standards to tooling and CI/CD pipeline. As Accessibility Officer, I drive company-wide accessibility standards.',
@@ -158,11 +158,11 @@ const cvData = {
     ],
     skills: [
       'Vue.js 3, Nuxt, TypeScript, JavaScript',
+      'React, Next.js',
       'Frontend architecture, component libraries, state management',
       'HTML & CSS, Tailwind, UnoCSS, Bootstrap',
       'Testing (Vitest), CI/CD, Azure, Git, Docker',
       'Accessibility (WCAG, semantic HTML, ARIA, accessibility tree)',
-      'React, Next.js',
       'Java, Spring Boot, Kotlin, PHP, Laravel, Symfony',
       'SQL & PostgreSQL',
     ],
